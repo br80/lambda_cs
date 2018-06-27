@@ -10,9 +10,9 @@ books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Gira
 
 def secretToCoding():
   print ""
-  print "Beautiful code is both elegant and efficient."
-  print "  ELEGANT: easy to read, easy to understand, easy to maintain and easy to modify"
-  print "  EFFICIENT: minimal CPU operations and minimal memory/storage requirements"
+  print "Beautiful code is both ELEGANT and EFFICIENT"
+  print "  ELEGANT: easy to read, easy to understand, easy to maintain, easy to modify"
+  print "  EFFICIENT: minimal CPU operations, minimal memory/storage requirements"
   print ""
 
 
