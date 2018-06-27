@@ -1,9 +1,20 @@
 import math
 import random
+import time
 from datetime import datetime
 
 books = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
 books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
+
+
+
+def secretToCoding():
+  print ""
+  print "Beautiful code is both elegant and efficient."
+  print "  ELEGANT: easy to read, easy to understand, easy to maintain and easy to modify"
+  print "  EFFICIENT: minimal CPU operations and minimal memory/storage requirements"
+  print ""
+
 
 
 ##########
