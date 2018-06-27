@@ -159,7 +159,7 @@ def getLengthOfList(l):
 
 # Given a list,
 # Return the list's length
-# O(n)  (why?)
+# O()
 def betterGetLengthOfList(l):
   return len(l)
 
