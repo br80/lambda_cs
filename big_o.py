@@ -11,7 +11,7 @@ books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Gira
 def secretToCoding():
   print ""
   print "Beautiful code is both ELEGANT and EFFICIENT"
-  print "  ELEGANT: easy to read, easy to understand, easy to maintain, easy to modify"
+  print "  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify"
   print "  EFFICIENT: minimal CPU operations, minimal memory/storage requirements"
   print ""
 
@@ -76,6 +76,10 @@ def printBookPairs():
 
 
 
+##########
+# O(n^3)
+##########
+
 # Give me a list of all possible book triples
 def printBookTriples():
   for book1 in books:
@@ -108,31 +112,38 @@ def getListOfCheckoutCombos(l):
 # O(n!)
 ##########
 
-# Give me all possible combination of books
-def getAllOrderings(l):
+# Give me all possible arrangements of books
+def getAllArrangements(l):
   list_length = getLengthOfList(l)
   if list_length <= 1:
     return [l]
   else:
-    orderings = []
-    previousOrderings = getAllOrderings( l[1:] )
-    for previousOrdering in previousOrderings:
-      for i in xrange(getLengthOfList(previousOrdering) + 1):
-        orderings.append( previousOrdering[i:] + [l[0]] + previousOrdering[:i] )
-    return orderings
+    arrangements = []
+    previousArrangements = getAllArrangements( l[1:] )
+    for previousArrangement in previousArrangements:
+      for i in xrange(getLengthOfList(previousArrangement) + 1):
+        arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[:i] )
+    return arrangements
 
 
 
+
+# O(n)
 def getLengthOfList(l):
   list_length = 0
   for i in l:
     list_length += 1
   return list_length
 
+# O(1)
+# Why?
+def betterGetLengthOfList(l):
+  return len(l)
+
 
 
 start_time = datetime.now()
-x=getAllOrderings(books + ["Kangaroo"])
+x=getAllArrangements(books + ["Kangaroo"])
 end_time = datetime.now()
 print end_time - start_time
 
