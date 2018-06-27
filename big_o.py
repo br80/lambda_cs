@@ -8,18 +8,29 @@ books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Gira
 
 
 
-def secretToCoding():
+# Returns the secret to coding
+def secretToCoding1():
   print ""
   print "Beautiful code is both ELEGANT and EFFICIENT"
   print "  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify"
   print "  EFFICIENT: minimal CPU operations, minimal memory/storage requirements"
   print ""
 
+# Returns the secret to coding
+def secretToCoding2():
+  print "\nBeautiful code is both ELEGANT and EFFICIENT\n  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify\n  EFFICIENT: minimal CPU operations, minimal memory/storage requirements\n"
+
+
+# Which is correct: secretToCoding1() or secretToCoding2()?
+
+
 
 
 ##########
 # O(1)
 ##########
+
+# Return the name of all books
 def getBooks():
   return books
 
@@ -27,12 +38,15 @@ def getBooks():
 ##########
 # O(n)
 ##########
+
+# Returns the number of books
 def getNumBooks():
   num_books = 0
   for book in books:
     num_books += 1
   return num_books
 
+# Returns each book with all letters lowercase
 def getLowercaseBooks():
   lowercase_books = books
   book_index = 0
@@ -41,12 +55,16 @@ def getLowercaseBooks():
     book_index += 1
   return lowercase_books
 
+# Given the name of a book,
+# Return True if that book is in the list, False otherwise
 def hasBook(book_name):
   for book in books:
     if book == book_name:
       return True
   return False
 
+# Given the name of a book,
+# Return the book's index if that book is in the list, -1 otherwise
 def findBook(book_name):
   book_index = 0
   for book in books:
@@ -55,6 +73,7 @@ def findBook(book_name):
     book_index += 1
   return -1
 
+# Shuffle the order of the stored books
 def shuffleBooks():
   num_books = getNumBooks()
   for i in xrange(num_books):
@@ -68,7 +87,7 @@ def shuffleBooks():
 # O(n^2)
 ##########
 
-# Give me a list of all possible book pairs
+# Print a list of all possible book pairs
 def printBookPairs():
   for book1 in books:
     for book2 in books:
@@ -80,7 +99,7 @@ def printBookPairs():
 # O(n^3)
 ##########
 
-# Give me a list of all possible book triples
+# Print a list of all possible book triples
 def printBookTriples():
   for book1 in books:
     for book2 in books:
@@ -93,7 +112,8 @@ def printBookTriples():
 # O(2^n)
 ##########
 
-# Give me all possible combination of books
+# Given a list,
+# Return a list of all possible combination of list items that can be checked out
 def getListOfCheckoutCombos(l):
   list_length = getLengthOfList(l)
   if list_length == 0:
@@ -112,7 +132,8 @@ def getListOfCheckoutCombos(l):
 # O(n!)
 ##########
 
-# Give me all possible arrangements of books
+# Given a list,
+# Return a list of all possible arrangements of list items
 def getAllArrangements(l):
   list_length = getLengthOfList(l)
   if list_length <= 1:
@@ -127,7 +148,8 @@ def getAllArrangements(l):
 
 
 
-
+# Given a list,
+# Return the list's length
 # O(n)
 def getLengthOfList(l):
   list_length = 0
@@ -135,30 +157,32 @@ def getLengthOfList(l):
     list_length += 1
   return list_length
 
-# O(1)
-# Why?
+# Given a list,
+# Return the list's length
+# O(n)  (why?)
 def betterGetLengthOfList(l):
   return len(l)
 
 
+# This can be used to time the runtime of various functions
+def printFunctionRuntime():
+  start_time = datetime.now()
+  x=getAllArrangements(books)
+  end_time = datetime.now()
+  print end_time - start_time
 
-start_time = datetime.now()
-x=getAllArrangements(books + ["Kangaroo"])
-end_time = datetime.now()
-print end_time - start_time
 
+# num_books = 9
+# num_arrangements = 362,880
+# runtime = 1.2 seconds
 
-# 9
-# 362880
-# 0:00:01.203865
+# num_books = 10
+# num_arrangements = 3,628,800
+# runtime = 9.6 seconds
 
-# 10
-# 3628800
-# 0:00:09.603591
-
-# 11
-# 39916800
-# 0:02:40.727259
+# num_books = 11
+# num_arrangements = 39,916,800
+# runtime = 2 minutes 40.7 seconds
 
 
 
