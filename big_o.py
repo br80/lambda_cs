@@ -1,10 +1,4 @@
-import math
-import random
-import time
-from datetime import datetime
 
-books = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
-books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
 
 
 
@@ -24,6 +18,20 @@ def secretToCoding2():
 # Which is correct: secretToCoding1() or secretToCoding2()?
 
 
+# Big-O stands for "order of"
+
+
+
+
+import math
+import random
+import time
+from datetime import datetime
+
+
+
+books = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
+
 
 
 ##########
@@ -38,6 +46,8 @@ def getBooks():
 ##########
 # O(n)
 ##########
+
+# O(n) == (n)
 
 # Returns the number of books
 def getNumBooks():
@@ -81,6 +91,7 @@ def shuffleBooks():
     temp_storage = books[i]
     books[i] = books[random_i]
     books[random_i] = temp_storage
+
 
 
 ##########
@@ -157,6 +168,7 @@ def getLengthOfList(l):
     list_length += 1
   return list_length
 
+
 # Given a list,
 # Return the list's length
 # O(1)
@@ -167,7 +179,7 @@ def betterGetLengthOfList(l):
 # This can be used to time the runtime of various functions
 def printFunctionRuntime():
   start_time = datetime.now()
-  x=getAllArrangements(books)
+  x = getAllArrangements(books_10 + ["Kangaroo"])
   end_time = datetime.now()
   print end_time - start_time
 
@@ -185,6 +197,23 @@ def printFunctionRuntime():
 # runtime = 2 minutes 40.7 seconds
 
 
+####
+# Summarize Big-O
+# Google, Facebook test algorithms/computer science because they have the biggest Ns
+####
+
+
+books_1 = ["Aardvark"]
+books_2 = ["Aardvark", "Bear"]
+books_3 = ["Aardvark", "Bear", "Cat"]
+books_4 = ["Aardvark", "Bear", "Cat", "Duck"]
+books_5 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant"]
+books_6 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo"]
+books_7 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe"]
+books_8 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo"]
+books_9 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana"]
+books_10 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
+books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
 
 
 
