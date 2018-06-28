@@ -6,7 +6,7 @@
 def secretToCoding1():
   print ""
   print "Beautiful code is both ELEGANT and EFFICIENT"
-  print "  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify"
+  print "  ELEGANT: concise, easy to read, easy to understand, easy to maintain, easy to modify"
   print "  EFFICIENT: minimal CPU operations, minimal memory/storage requirements"
   print ""
 
