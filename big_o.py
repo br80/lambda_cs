@@ -173,7 +173,8 @@ def betterGetLengthOfList(l):
 # This can be used to time the runtime of various functions
 def printFunctionRuntime():
   start_time = datetime.now()
-  x = getAllArrangements(books_10 + ["Kangaroo"])
+  x = getAllArrangements(books_10)
+  # x = getAllArrangements(books_10 + ["Kangaroo"])
   end_time = datetime.now()
   print end_time - start_time
 
@@ -201,6 +202,8 @@ books_7 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe"]
 books_8 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo"]
 books_9 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana"]
 books_10 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
+books_11 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal", "Kangaroo"]
+
 books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
 
 
