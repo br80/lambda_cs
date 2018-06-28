@@ -2,7 +2,7 @@
 
 
 
-# Returns the secret to coding
+# Returns the secret to beautiful code
 def secretToCoding1():
   print ""
   print "Beautiful code is both ELEGANT and EFFICIENT"
@@ -10,16 +10,12 @@ def secretToCoding1():
   print "  EFFICIENT: minimal CPU operations, minimal memory/storage requirements"
   print ""
 
-# Returns the secret to coding
+# Returns the secret to beautiful code
 def secretToCoding2():
   print "\nBeautiful code is both ELEGANT and EFFICIENT\n  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify\n  EFFICIENT: minimal CPU operations, minimal memory/storage requirements\n"
 
 
-# Which is correct: secretToCoding1() or secretToCoding2()?
-
-
-# Big-O stands for "order of"
-
+# Which code is more beautiful: secretToCoding1() or secretToCoding2()?
 
 
 
@@ -46,8 +42,6 @@ def getBooks():
 ##########
 # O(n)
 ##########
-
-# O(n) == (n)
 
 # Returns the number of books
 def getNumBooks():
@@ -195,12 +189,6 @@ def printFunctionRuntime():
 # num_books = 11
 # num_arrangements = 39,916,800
 # runtime = 2 minutes 40.7 seconds
-
-
-####
-# Summarize Big-O
-# Google, Facebook test algorithms/computer science because they have the biggest Ns
-####
 
 
 books_1 = ["Aardvark"]
