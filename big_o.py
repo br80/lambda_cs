@@ -4,15 +4,15 @@
 
 # Returns the secret to beautiful code
 def secretToCoding1():
-  print ""
-  print "Beautiful code is both ELEGANT and EFFICIENT"
-  print "  ELEGANT: concise, easy to read, easy to understand, easy to maintain, easy to modify"
-  print "  EFFICIENT: minimal CPU operations, minimal memory/storage requirements"
-  print ""
+  print ("")
+  print ("Beautiful code is both ELEGANT and EFFICIENT")
+  print ("  ELEGANT: concise, easy to read, easy to understand, easy to maintain, easy to modify")
+  print ("  EFFICIENT: minimal CPU operations, minimal memory/storage requirements")
+  print ("")
 
 # Returns the secret to beautiful code
 def secretToCoding2():
-  print "\nBeautiful code is both ELEGANT and EFFICIENT\n  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify\n  EFFICIENT: minimal CPU operations, minimal memory/storage requirements\n"
+  print ("\nBeautiful code is both ELEGANT and EFFICIENT\n  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify\n  EFFICIENT: minimal CPU operations, minimal memory/storage requirements\n")
 
 
 # Which code is more beautiful: secretToCoding1() or secretToCoding2()?
@@ -96,7 +96,7 @@ def shuffleBooks():
 def printBookPairs():
   for book1 in books:
     for book2 in books:
-      print book1 + " - " + book2
+      print (book1 + " - " + book2)
 
 
 
@@ -109,7 +109,7 @@ def printBookTriples():
   for book1 in books:
     for book2 in books:
       for book3 in books:
-        print book1 + " - " + book2 + " - " + book3
+        print (book1 + " - " + book2 + " - " + book3)
 
 
 
@@ -176,7 +176,7 @@ def printFunctionRuntime():
   x = getAllArrangements(books_10)
   # x = getAllArrangements(books_10 + ["Kangaroo"])
   end_time = datetime.now()
-  print end_time - start_time
+  print (end_time - start_time)
 
 
 # num_books = 9
