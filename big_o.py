@@ -24,67 +24,75 @@ import random
 import time
 from datetime import datetime
 
-
-
-books = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
-
+animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
 
 
 ##########
 # O(1)
 ##########
 
-# Return the name of all books
-def getBooks():
-  return books
+# Return the name of all animals
+def getAnimals():
+  return animals
 
 
 ##########
 # O(n)
 ##########
 
-# Returns the number of books
-def getNumBooks():
-  num_books = 0
-  for book in books:
-    num_books += 1
-  return num_books
+# Returns the number of animals
+def countAnimals():
+    num_animals = 0
+    for animal in animals:
+        num_animals += 1
+    return num_animals
 
-# Returns each book with all letters lowercase
-def getLowercaseBooks():
-  lowercase_books = books
-  book_index = 0
-  for book in books:
-    lowercase_books[book_index] = lowercase_books[book_index].lower()
-    book_index += 1
-  return lowercase_books
 
-# Given the name of a book,
-# Return True if that book is in the list, False otherwise
-def hasBook(book_name):
-  for book in books:
-    if book == book_name:
-      return True
-  return False
 
-# Given the name of a book,
-# Return the book's index if that book is in the list, -1 otherwise
-def findBook(book_name):
-  book_index = 0
-  for book in books:
-    if book == book_name:
-      return book_index
-    book_index += 1
-  return -1
 
-# Shuffle the order of the stored books
-def shuffleBooks():
-  num_books = getNumBooks()
-  for i in xrange(num_books):
-    random_i = random.randrange(num_books)
-    temp_storage = books[i]
-    books[i] = books[random_i]
-    books[random_i] = temp_storage
+# Returns each animal with all letters lowercase
+def getLowercaseAnimals():
+    lowercase_animals = animals
+    animal_index = 0
+    for animal in animals:
+        lowercase_animals[animal_index] = lowercase_animals[animal_index].lower()
+        animal_index += 1
+    return lowercase_animals
+
+
+
+# Given the name of a animal,
+# Return True if that animal is in the list, False otherwise
+def hasAnimal(animal_name):
+    for animal in animals:
+        if animal == animal_name:
+            return True
+    return False
+
+
+
+
+# Given the name of a animal,
+# Return the animal's index if that animal is in the list, -1 otherwise
+def findAnimal(animal_name):
+    animal_index = 0
+    for animal in animals:
+        if animal == animal_name:
+            return animal_index
+        animal_index += 1
+    return -1
+
+
+
+
+# Shuffle the order of the stored animals
+def shuffleAnimals():
+    num_animals = countAnimals()
+    for i in range(num_animals):
+        random_i = random.randrange(num_animals)
+        temp_storage = animals[i]
+        animals[i] = animals[random_i]
+        animals[random_i] = temp_storage
 
 
 
@@ -92,11 +100,11 @@ def shuffleBooks():
 # O(n^2)
 ##########
 
-# Print a list of all possible book pairs
-def printBookPairs():
-  for book1 in books:
-    for book2 in books:
-      print (book1 + " - " + book2)
+# Print a list of all possible animal pairs
+def printAnimalPairs():
+    for animal1 in animals:
+        for animal2 in animals:
+            print (f"{animal1} - {animal2}")
 
 
 
@@ -104,12 +112,12 @@ def printBookPairs():
 # O(n^3)
 ##########
 
-# Print a list of all possible book triples
+# Print a list of all possible animal triples
 def printBookTriples():
-  for book1 in books:
-    for book2 in books:
-      for book3 in books:
-        print (book1 + " - " + book2 + " - " + book3)
+    for animal1 in animals:
+        for animal2 in animals:
+            for animal3 in animals:
+                print (f"{animal1} - {animal2} - {animal3}")
 
 
 
@@ -118,18 +126,18 @@ def printBookTriples():
 ##########
 
 # Given a list,
-# Return a list of all possible combination of list items that can be checked out
-def getListOfCheckoutCombos(l):
-  list_length = getLengthOfList(l)
-  if list_length == 0:
-    return [ [] ]
-  else:
-    checkoutCombos = []
-    previousCombos = getListOfCheckoutCombos( l[1:] )
-    for combo in previousCombos:
-      checkoutCombos.append( combo )
-      checkoutCombos.append( combo + [l[0]] )
-    return checkoutCombos
+# Return a list of all possible combination of animals
+def getListOfAnimalCombos(l):
+    list_length = len(l)
+    if list_length == 0:
+        return [ [] ]
+    else:
+        animalCombos = []
+        previousCombos = getListOfAnimalCombos( l[1:] )
+        for combo in previousCombos:
+            animalCombos.append( combo )
+            animalCombos.append( combo + [l[0]] )
+        return animalCombos
 
 
 
@@ -140,16 +148,16 @@ def getListOfCheckoutCombos(l):
 # Given a list,
 # Return a list of all possible arrangements of list items
 def getAllArrangements(l):
-  list_length = getLengthOfList(l)
-  if list_length <= 1:
-    return [l]
-  else:
-    arrangements = []
-    previousArrangements = getAllArrangements( l[1:] )
-    for previousArrangement in previousArrangements:
-      for i in xrange(getLengthOfList(previousArrangement) + 1):
-        arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[:i] )
-    return arrangements
+    list_length = getLengthOfList(l)
+    if list_length <= 1:
+        return [l]
+    else:
+        arrangements = []
+        previousArrangements = getAllArrangements( l[1:] )
+        for previousArrangement in previousArrangements:
+            for i in range(getLengthOfList(previousArrangement) + 1):
+                arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[:i] )
+        return arrangements
 
 
 
@@ -157,54 +165,54 @@ def getAllArrangements(l):
 # Return the list's length
 # O(n)
 def getLengthOfList(l):
-  list_length = 0
-  for i in l:
-    list_length += 1
-  return list_length
+    list_length = 0
+    for i in l:
+        list_length += 1
+    return list_length
 
 
 # Given a list,
 # Return the list's length
 # O(1)
 def betterGetLengthOfList(l):
-  return len(l)
+    return len(l)
 
 
 # This can be used to time the runtime of various functions
 def printFunctionRuntime():
-  start_time = datetime.now()
-  x = getAllArrangements(books_10)
-  # x = getAllArrangements(books_10 + ["Kangaroo"])
-  end_time = datetime.now()
-  print (end_time - start_time)
+    start_time = datetime.now()
+    x = getAllArrangements(animals)
+    # x = getAllArrangements(animals_10 + ["Kangaroo"])
+    end_time = datetime.now()
+    print (end_time - start_time)
 
 
-# num_books = 9
+# num_animals = 9
 # num_arrangements = 362,880
 # runtime = 1.2 seconds
 
-# num_books = 10
+# num_animals = 10
 # num_arrangements = 3,628,800
 # runtime = 9.6 seconds
 
-# num_books = 11
+# num_animals = 11
 # num_arrangements = 39,916,800
 # runtime = 2 minutes 40.7 seconds
 
 
-books_1 = ["Aardvark"]
-books_2 = ["Aardvark", "Bear"]
-books_3 = ["Aardvark", "Bear", "Cat"]
-books_4 = ["Aardvark", "Bear", "Cat", "Duck"]
-books_5 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant"]
-books_6 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo"]
-books_7 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe"]
-books_8 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo"]
-books_9 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana"]
-books_10 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
-books_11 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal", "Kangaroo"]
+animals_1 = ["Aardvark"]
+animals_2 = ["Aardvark", "Bear"]
+animals_3 = ["Aardvark", "Bear", "Cat"]
+animals_4 = ["Aardvark", "Bear", "Cat", "Duck"]
+animals_5 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant"]
+animals_6 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo"]
+animals_7 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe"]
+animals_8 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo"]
+animals_9 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana"]
+animals_10 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
+animals_11 = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal", "Kangaroo"]
 
-books_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
+animals_sorted = ["Aardvark", "Bear", "Cat", "Duck", "Elephant", "Flamingo", "Giraffe", "Hippo", "Iguana", "Jackal"]
 
 
 
