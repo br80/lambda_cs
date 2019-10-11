@@ -3,15 +3,16 @@
 
 
 # Returns the secret to beautiful code
-def secretToCoding1():
+def secret_to_coding_1():
   print ("")
   print ("Beautiful code is both ELEGANT and EFFICIENT")
   print ("  ELEGANT: concise, easy to read, easy to understand, easy to maintain, easy to modify")
   print ("  EFFICIENT: minimal CPU operations, minimal memory/storage requirements")
   print ("")
 
+
 # Returns the secret to beautiful code
-def secretToCoding2():
+def secret_to_coding_2():
   print ("\nBeautiful code is both ELEGANT and EFFICIENT\n  ELEGANT: short, easy to read, easy to understand, easy to maintain, easy to modify\n  EFFICIENT: minimal CPU operations, minimal memory/storage requirements\n")
 
 
@@ -32,7 +33,7 @@ animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', '
 ##########
 
 # Return the name of all animals
-def getAnimals():
+def get_animals():
   return animals
 
 
@@ -41,7 +42,7 @@ def getAnimals():
 ##########
 
 # Returns the number of animals
-def countAnimals():
+def count_animals():
     num_animals = 0
     for animal in animals:
         num_animals += 1
@@ -51,8 +52,8 @@ def countAnimals():
 
 
 # Returns each animal with all letters lowercase
-def getLowercaseAnimals():
-    lowercase_animals = animals
+def get_lowercase_animals():
+    lowercase_animals = list(animals)
     animal_index = 0
     for animal in animals:
         lowercase_animals[animal_index] = lowercase_animals[animal_index].lower()
@@ -63,8 +64,9 @@ def getLowercaseAnimals():
 
 # Given the name of a animal,
 # Return True if that animal is in the list, False otherwise
-def hasAnimal(animal_name):
+def has_animal(animal_name):
     for animal in animals:
+        counter += 1
         if animal == animal_name:
             return True
     return False
@@ -74,7 +76,7 @@ def hasAnimal(animal_name):
 
 # Given the name of a animal,
 # Return the animal's index if that animal is in the list, -1 otherwise
-def findAnimal(animal_name):
+def find_animal(animal_name):
     animal_index = 0
     for animal in animals:
         if animal == animal_name:
@@ -86,8 +88,8 @@ def findAnimal(animal_name):
 
 
 # Shuffle the order of the stored animals
-def shuffleAnimals():
-    num_animals = countAnimals()
+def shuffle_animals():
+    num_animals = count_animals()
     for i in range(num_animals):
         random_i = random.randrange(num_animals)
         temp_storage = animals[i]
@@ -101,10 +103,10 @@ def shuffleAnimals():
 ##########
 
 # Print a list of all possible animal pairs
-def printAnimalPairs():
-    for animal1 in animals:
-        for animal2 in animals:
-            print (f"{animal1} - {animal2}")
+def print_animal_pairs():
+    for animal_1 in animals:
+        for animal_2 in animals:
+            print (f"{animal_1} - {animal_2}")
 
 
 
@@ -113,11 +115,11 @@ def printAnimalPairs():
 ##########
 
 # Print a list of all possible animal triples
-def printBookTriples():
-    for animal1 in animals:
-        for animal2 in animals:
-            for animal3 in animals:
-                print (f"{animal1} - {animal2} - {animal3}")
+def print_animal_triples():
+    for animal_1 in animals:
+        for animal_2 in animals:
+            for animal_3 in animals:
+                print (f"{animal_1} - {animal_2} - {animal_3}")
 
 
 
@@ -127,17 +129,17 @@ def printBookTriples():
 
 # Given a list,
 # Return a list of all possible combination of animals
-def getListOfAnimalCombos(l):
+def get_animal_combos(l):
     list_length = len(l)
     if list_length == 0:
         return [ [] ]
     else:
-        animalCombos = []
-        previousCombos = getListOfAnimalCombos( l[1:] )
-        for combo in previousCombos:
-            animalCombos.append( combo )
-            animalCombos.append( combo + [l[0]] )
-        return animalCombos
+        animal_combos = []
+        previous_combos = get_animal_combos( l[1:] )
+        for combo in previous_combos:
+            animal_combos.append( combo )
+            animal_combos.append( combo + [l[0]] )
+        return animal_combos
 
 
 
@@ -147,16 +149,16 @@ def getListOfAnimalCombos(l):
 
 # Given a list,
 # Return a list of all possible arrangements of list items
-def getAllArrangements(l):
-    list_length = getLengthOfList(l)
+def get_all_arrangements(l):
+    list_length = len(l)
     if list_length <= 1:
         return [l]
     else:
         arrangements = []
-        previousArrangements = getAllArrangements( l[1:] )
-        for previousArrangement in previousArrangements:
-            for i in range(getLengthOfList(previousArrangement) + 1):
-                arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[:i] )
+        previous_arrangements = get_all_arrangements( l[1:] )
+        for previous_arrangement in previous_arrangements:
+            for i in range(len(previous_arrangement) + 1):
+                arrangements.append( previous_arrangement[i:] + [l[0]] + previous_arrangement[:i] )
         return arrangements
 
 
@@ -164,7 +166,7 @@ def getAllArrangements(l):
 # Given a list,
 # Return the list's length
 # O(n)
-def getLengthOfList(l):
+def get_length_of_list(l):
     list_length = 0
     for i in l:
         list_length += 1
@@ -174,15 +176,15 @@ def getLengthOfList(l):
 # Given a list,
 # Return the list's length
 # O(1)
-def betterGetLengthOfList(l):
+def better_get_length_of_list(l):
     return len(l)
 
 
 # This can be used to time the runtime of various functions
-def printFunctionRuntime():
+def print_function_runtime():
     start_time = datetime.now()
-    x = getAllArrangements(animals)
-    # x = getAllArrangements(animals_10 + ["Kangaroo"])
+    x = get_all_arrangements(animals_11)
+    # x = get_all_arrangements(animals_10 + ["Kangaroo"])
     end_time = datetime.now()
     print (end_time - start_time)
 
