@@ -43,6 +43,15 @@ def insertion_sort( arr ):
 
 
 
+l = [random.randint(0, 1000) for i in range(0, 10000)]
+
+start_time = time()
+# Run our code
+bubble_sort(l)
+# Store the ending time
+end_time = time()
+print (f"Quadratic runtime: {end_time - start_time} seconds")
+
 
 l = [random.randint(0, 1000) for i in range(0, 10000)]
 
